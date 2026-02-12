@@ -1,11 +1,6 @@
 streamlit
-langchain==0.1.12
-langchain-community==0.0.28
-langchain-experimental==0.0.54
-langchain-google-genai==1.0.1
-langchain-core==0.1.32
-psycopg2-binary
-pypdf
-faiss-cpu
-tabulate
 google-generativeai
+psycopg2-binary
+python-dotenv
+langchain
+langchain-google-genai
