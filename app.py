@@ -1,3 +1,4 @@
+%%writefile app.py
 import streamlit as st
 import os
 from langchain_google_genai import ChatGoogleGenerativeAI
@@ -43,7 +44,7 @@ def get_agent_tools():
         
         uri = f"postgresql://{db_user}:{db_pass}@{db_host}:5432/{db_name}"
         db = SQLDatabase.from_uri(uri)
-        llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0)
+        llm = ChatGoogleGenerativeAI(model="gemini-flash-latest", temperature=0)
         
         sql_chain = SQLDatabaseChain.from_llm(llm, db, verbose=True)
         
@@ -80,7 +81,7 @@ def get_agent_tools():
     return tools
 
 # 3. INITIALIZE THE BRAIN
-llm_agent = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0)
+llm_agent = ChatGoogleGenerativeAI(model="gemini-flash-latest", temperature=0)
 tools = get_agent_tools()
 
 agent = initialize_agent(
